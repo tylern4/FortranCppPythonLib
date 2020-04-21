@@ -2,7 +2,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include "even_odd.hpp"
+#include "commonLib.hpp"
 
 int main(int argc, char const *argv[]) {
   if (argc == 1) {
@@ -12,7 +12,7 @@ int main(int argc, char const *argv[]) {
     std::vector<std::string> args(argv + 1, argv + argc);
     for (auto &&a : args) {
       std::cout << a << " ";
-      calling_from_fortran(stof(a));
+      calling_from_fortran(stod(a));
     }
   }
 

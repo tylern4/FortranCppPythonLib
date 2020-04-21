@@ -3,7 +3,7 @@
 cimport cython
 from libcpp cimport bool
 
-cdef extern from "even_odd.hpp":
+cdef extern from "commonLib.hpp":
   bool even(int i)
   bool odd(int i)
   void calling_from_fortran(float num)

@@ -18,7 +18,7 @@ END SUBROUTINE odd
 
 SUBROUTINE calling_from_fortran(num)
   IMPLICIT NONE
-  REAL, INTENT(in)  :: num
+  double precision, INTENT(in)  :: num
 
   WRITE(*,*) "Calling from Fortran", num
 
