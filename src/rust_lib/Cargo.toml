@@ -1,0 +1,9 @@
+[package]
+name = "rustcommonlib"
+version = "1.0.0"
+authors = ["Nick Tyler"]
+
+[lib]
+crate-type = ["staticlib"]
+
+[dependencies]

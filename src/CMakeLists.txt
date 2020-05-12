@@ -10,6 +10,7 @@ file (GLOB _srcs
     ${PROJECT_SOURCE_DIR}/src/*.f
 )
 
+add_subdirectory(rust_lib)
 
 add_library(_objlib OBJECT ${_srcs})
 set_property(TARGET _objlib PROPERTY POSITION_INDEPENDENT_CODE ON)

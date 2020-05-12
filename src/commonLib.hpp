@@ -12,6 +12,13 @@ void calling_from_fortran_(double *num);
 void calling_from_cpp_(float *num);
 void vertex_e16_(float *PX, float *PY, float *PZ, float *VX0, float *VY0, float *VZ0, float *VX, float *VY, float *VZ);
 
+void rust_hello();
+void _rust_hello();
+
+float get_float();
+int get_int();
+float add_two_point_2(float x);
+
 #ifdef __cplusplus
 };
 #endif

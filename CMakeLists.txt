@@ -45,7 +45,7 @@ foreach(exe ${EXAMPLES} )
     string( REPLACE ".cxx" "" exename ${exename} )
     string( REPLACE ".f90" "" exename ${exename} )
     add_executable( ${exename} ${exe} )
-    target_link_libraries(${exename} PUBLIC ${ROOT_LIBRARIES} _FortranCppPythonLib)
+    target_link_libraries(${exename} PUBLIC rustcommonlib ${ROOT_LIBRARIES} _FortranCppPythonLib)
     install(TARGETS ${exename} EXPORT ${PROJECT_NAME}Targets RUNTIME DESTINATION bin)
 endforeach( exe ${EXAMPLES} )
 
