@@ -11,9 +11,12 @@ bool odd(int num) {
   return pass;
 }
 
+// wrapper for c++
 void calling_from_fortran(double num) { calling_from_fortran_(&num); }
 
+// c++ implenentaion
 void calling_from_cpp(float num) { std::cout << " Calling from cpp\t" << num << std::endl; }
+// wrapper for fortran
 void calling_from_cpp_(float *num) { calling_from_cpp(*num); }
 
 threeVector vertex_correction(threeVector &mom, threeVector &vertex) {
