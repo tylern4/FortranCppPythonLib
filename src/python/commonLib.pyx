@@ -6,7 +6,7 @@ from libcpp cimport bool
 cdef extern from "commonLib.hpp":
   bool even(int i)
   bool odd(int i)
-  void calling_from_fortran(float num)
+  double calling_from_fortran(float num)
   void calling_from_cpp(float num)
   
 @cython.boundscheck(False)

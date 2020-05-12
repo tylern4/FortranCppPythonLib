@@ -16,11 +16,14 @@ SUBROUTINE odd(num, pass)
 
 END SUBROUTINE odd
 
-SUBROUTINE calling_from_fortran(num)
+SUBROUTINE calling_from_fortran(num, out)
   IMPLICIT NONE
   double precision, INTENT(in)  :: num
+  double precision, INTENT(out)  :: out
 
-  WRITE(*,*) "Calling from Fortran", num
+  WRITE(*,*) "Calling from Fortran and adding 2.2", num
+
+  out = num + 2.2
 
 END SUBROUTINE calling_from_fortran
 

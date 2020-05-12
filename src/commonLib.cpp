@@ -12,7 +12,11 @@ bool odd(int num) {
 }
 
 // wrapper for c++
-void calling_from_fortran(double num) { calling_from_fortran_(&num); }
+double calling_from_fortran(double num) {
+  double out = 0.0;
+  calling_from_fortran_(&num, &out);
+  return out;
+}
 
 // c++ implenentaion
 void calling_from_cpp(float num) { std::cout << " Calling from cpp\t" << num << std::endl; }

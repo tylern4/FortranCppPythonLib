@@ -8,7 +8,7 @@ extern "C" {
 
 void even_(int *num, bool *pass);
 void odd_(int *num, bool *pass);
-void calling_from_fortran_(double *num);
+void calling_from_fortran_(double *num, double *out);
 void calling_from_cpp_(float *num);
 void vertex_e16_(float *PX, float *PY, float *PZ, float *VX0, float *VY0, float *VZ0, float *VX, float *VY, float *VZ);
 
@@ -18,7 +18,7 @@ void vertex_e16_(float *PX, float *PY, float *PZ, float *VX0, float *VY0, float 
 
 bool even(int num);
 bool odd(int num);
-void calling_from_fortran(double num);
+double calling_from_fortran(double num);
 void calling_from_cpp(float num);
 
 struct threeVector {
