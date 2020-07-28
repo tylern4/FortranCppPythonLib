@@ -19,14 +19,14 @@ double calling_from_fortran(double num) {
 }
 
 // c++ implenentaion
-void calling_from_cpp(float num) { std::cout << " Calling from cpp\t" << num << std::endl; }
+float calling_from_cpp(float num) {
+  std::cout << " Calling from cpp\t" << num << std::endl;
+  return num;
+}
+
+float add_2(float num) { return num + 2.0; }
 // wrapper for fortran
-void calling_from_cpp_(float *num) { calling_from_cpp(*num); }
-
-threeVector vertex_correction(threeVector &mom, threeVector &vertex) {
-  threeVector corrected_vertex{0, 0, 0};
-  vertex_e16_(&mom.vx, &mom.vy, &mom.vz, &vertex.vx, &vertex.vy, &vertex.vz, &corrected_vertex.vx, &corrected_vertex.vy,
-              &corrected_vertex.vz);
-
-  return corrected_vertex;
+float calling_from_cpp_(float *num) {
+  calling_from_cpp(*num);
+  return *num;
 }

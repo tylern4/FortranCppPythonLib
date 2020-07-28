@@ -33,3 +33,6 @@
 
 .vscode
 build
+.ipynb_checkpoints
+bin
+lib

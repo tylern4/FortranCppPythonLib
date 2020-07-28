@@ -2,6 +2,7 @@
 #include <iostream>
 #include <ostream>
 
+//// These are C funtions for fortran to use
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -9,23 +10,18 @@ extern "C" {
 void even_(int *num, bool *pass);
 void odd_(int *num, bool *pass);
 void calling_from_fortran_(double *num, double *out);
-void calling_from_cpp_(float *num);
-void vertex_e16_(float *PX, float *PY, float *PZ, float *VX0, float *VY0, float *VZ0, float *VX, float *VY, float *VZ);
+float calling_from_cpp_(float *num);
+void wave_propogation_(int *num_steps, int *scale, float *damping, float *initial_P, int *stop_step, float *_P);
 
 #ifdef __cplusplus
 };
 #endif
+//// These are C funtions for fortran to use
 
+//// These are C++ funtions
 bool even(int num);
 bool odd(int num);
 double calling_from_fortran(double num);
-void calling_from_cpp(float num);
-
-struct threeVector {
-  float vx, vy, vz;
-  friend std::ostream &operator<<(std::ostream &os, const threeVector &n) {
-    return os << " vx:\t" << n.vx << "\tvy:\t" << n.vy << "\tvz:\t" << n.vz;
-  }
-};
-
-threeVector vertex_correction(threeVector mom, threeVector vertex);
+float calling_from_cpp(float num);
+float add_2(float num);
+//// These are C++ funtions

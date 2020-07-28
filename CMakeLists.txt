@@ -18,7 +18,8 @@ set(CMAKE_MODULE_PATH
    ${PROJECT_SOURCE_DIR}/cmake)
 
 set(CMAKE_C_FLAGS "-O3")
-set(CMAKE_CXX_FLAGS "-O3")
+# Turn off some numpy warnings due to cython <- I'll let the cython developers handle those...
+set(CMAKE_CXX_FLAGS "-O3 -Wno-deprecated-declarations -Wno-#warnings")
 set(CMAKE_FOTRAN_FLAGS "-O3")
 
 
