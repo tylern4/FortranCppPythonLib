@@ -3,12 +3,12 @@ from numpy.distutils.core import Extension
 from numpy.distutils.core import setup
 
 
-fortranExt = Extension(name="libfort", sources=["src/commonLib.f90"])
+fortranExt = Extension(name="wave_propogation", sources=["src/commonLib.f90"])
 
 
 setup(
-    name="fortran library",
-    description="Library to load functions from Fortran",
+    name="wave_propogation",
+    description="Fortran library to compute wave propogation in a box",
     ext_modules=[fortranExt],
 )
 
