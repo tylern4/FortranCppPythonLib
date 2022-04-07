@@ -73,6 +73,7 @@ SUBROUTINE wave_propogation(num_steps, scale, damping, initial_P, stop_step, P)
     ENDIF
 
     ! For each cell in matrix P
+    !$cuf kernel do <<< *, * >>>
     DO j=1,size_x
       DO i=1,size_x
         IF (i == 0) THEN

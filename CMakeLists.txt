@@ -19,7 +19,7 @@ set(CMAKE_MODULE_PATH
 
 set(CMAKE_C_FLAGS "-O3")
 # Turn off some numpy warnings due to cython <- I'll let the cython developers handle those...
-set(CMAKE_CXX_FLAGS "-O3 -Wno-deprecated-declarations -Wno-#warnings")
+set(CMAKE_CXX_FLAGS "-O3 -Wno-deprecated-declarations")
 set(CMAKE_FOTRAN_FLAGS "-O3")
 
 
@@ -37,16 +37,25 @@ IF(BUILD_PYTHON)
 ENDIF()
 
 
-file(GLOB EXAMPLES 
+file(GLOB EXAMPLES
       tests/*.cxx
-      tests/*.f90 
     )
 foreach(exe ${EXAMPLES} )
     get_filename_component(exename ${exe} NAME)
     string( REPLACE ".cxx" "" exename ${exename} )
-    string( REPLACE ".f90" "" exename ${exename} )
     add_executable( ${exename} ${exe} )
     target_link_libraries(${exename} PUBLIC ${ROOT_LIBRARIES} _FortranCppPythonLib)
     install(TARGETS ${exename} EXPORT ${PROJECT_NAME}Targets RUNTIME DESTINATION bin)
 endforeach( exe ${EXAMPLES} )
 
+
+#file(GLOB EXAMPLES
+#    tests/*.f90
+#    )
+#foreach(exe ${EXAMPLES} )
+#    get_filename_component(exename ${exe} NAME)
+#    string( REPLACE ".f90" "" exename ${exename} )
+#    add_executable( ${exename} ${exe} )
+#    target_link_libraries(${exename} PUBLIC ${ROOT_LIBRARIES} _FortranCppPythonLib)
+#    install(TARGETS ${exename} EXPORT ${PROJECT_NAME}Targets RUNTIME DESTINATION bin)
+# endforeach( exe ${EXAMPLES} )
